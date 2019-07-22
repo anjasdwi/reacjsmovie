@@ -7,22 +7,16 @@ class Movie extends Component {
         window.location.href = url
     }
     render() {
-        return <table key={this.props.movie.id} style={{
-            textAlign:"left",          
-          }}> 
-        <tbody>
-            <tr>
-            <td>
-                <img alt="poster" width="120" src={this.props.movie.poster_src}/>
-            </td>
-            <td>
+        return <div className="movie" key={this.props.movie.id} > 
+            <div className="movie-left">
+                <img alt="poster" width="100%" src={this.props.movie.poster_src}/>
+            </div>
+            <div className="movie-right">
                 <h3 >{this.props.movie.title}</h3>
                 <p>{this.props.movie.overview}</p>
-                <input type="button" onClick={this.viewMovie.bind(this)} value="view"/>
-            </td>
-            </tr>
-        </tbody>
-        </table>
+                <button onClick={this.viewMovie.bind(this)} >view</button>
+            </div>
+        </div>
     }
 }
 
