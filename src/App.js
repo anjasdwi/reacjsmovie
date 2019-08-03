@@ -71,17 +71,29 @@ searchChangeHandler(event) {
   render() {
   return (
     <div className="App">
-      <div className="header">
-        <h2>Movie Search</h2>
-        <p>You can search for any movie and anywhere here!</p>
-      </div>
-      <div className="search">
-        <input type='text' onChange={this.searchChangeHandler.bind(this)} placeholder="Type Search here...."></input>
-        <button>IO</button>
-      </div>
-      <section className="movie-content">
+      <table style={{
+        width: '100%',
+        padding: '0',
+        margin: '0',
+      }}>
+        <tbody className="titleBar">
+          <tr>
+            <td>
+              SEARCH
+            </td>
+            <td>
+              Movie DB
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <input type='text' style={{
+        width: '100%',
+        height: 40,
+        padding: '0',
+        margin: '0',
+      }} onChange={this.searchChangeHandler.bind(this)} placeholder="Type Search here...."></input>
       {this.state.rows}
-      </section>
     </div>
   );
   }
